@@ -24,6 +24,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int counter = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,11 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'This is a flutter bloc app',
             ),
+            Text("Test $counter"),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => print("pressed"),
+        onPressed: () => setState(() {
+          counter++;
+        }),
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
